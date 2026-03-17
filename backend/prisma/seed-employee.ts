@@ -56,8 +56,8 @@ const employees = [
     {
         firstName: "Hibroon",
         lastName: "Bhatti",
-        pseudoName: "",
-        email: "@mamamail.cloud",
+        pseudoName: "Matthew Schwab",
+        email: "matthewschwab@mamamail.cloud",
         password: "zevitech@123",
     },
 ];
