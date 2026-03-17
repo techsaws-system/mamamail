@@ -21,22 +21,22 @@ export default function TemplateTabs({ selected, onSelect }: Props) {
           <div
             onClick={() => onSelect(template.id)}
             className={cn(
-              "h-[200px] w-[200px] rounded-[10px] bg-card flex-center p-4 cursor-pointer",
+              "h-[200px] w-[200px] rounded-[10px] animation-standard bg-black/10 flex-center p-4 cursor-pointer",
               selected === template.id
                 ? "ring-2 ring-accent"
-                : "hover:bg-black/70",
+                : "hover:bg-black/40 border-2 border-border",
             )}
           >
             <Image
               src={template.previewImage}
-              className="rounded-sm object-cover border-border"
+              className="rounded-sm object-cover border-border border shadow-2xl"
               alt={template.title}
             />
           </div>
 
           <h1
             className={cn(
-              "text-[16px] leading-[22px] font-light",
+              "text-[16px] leading-[22px] font-semibold max-w-[250px] text-center mx-auto",
               selected === template.id ? "text-accent" : "text-heading",
             )}
           >

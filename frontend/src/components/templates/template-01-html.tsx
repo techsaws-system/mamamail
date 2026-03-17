@@ -2,53 +2,96 @@ export type Template01HTMLValues = {
   fromName: string;
   to: string;
   replyTo?: string | null;
-  examiningOfficer: string;
-  phone: string;
-  appointmentTime: string;
-  appointmentNumber: string;
+
+  trademarkName: string;
   serialNumber: string;
-  date: string;
+  examiningOfficer: string;
+  contactNumber: string;
+  appointmentNumber: string;
+  appointmentTime: string;
 };
 
 export const Template01HTML = (values: Template01HTMLValues) => {
   return `
-     <p>Dear Applicant,</p>
+  <div style="margin:0; padding:0; background:#f9fafb;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td align="center">
 
-      <p>Pursuant to <strong>15 U.S.C. §§1051-1052</strong> and in accordance with <strong>TMEP §§1401.02, 806.01, and 1202</strong>, your trademark application is currently undergoing initial examination at the <strong>United States Patent and Trademark Office (USPTO)</strong>.</p>
+          <!-- Container -->
+          <table width="600" cellpadding="0" cellspacing="0" border="0" style="
+            background:#ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            color:#111;
+            padding:24px;
+          ">
 
-      <p>Preliminary review indicates that additional or clarified classification details may be necessary to properly align your application with your actual commercial activity. As required under the Nice Agreement, all goods and services must be accurately classified under their appropriate international classes. Failure to comply may result in delays, limited protection, or further proceedings before the <strong>Trademark Trial and Appeal Board (TTAB)</strong>.</p>
+            <!-- Header -->
+            <tr>
+              <td align="center" style="
+                font-size:20px;
+                font-weight:700;
+                color:#0f172a;
+                letter-spacing:0.3px;
+              ">
+                United States Patent and Trademark Office (USPTO)
+              </td>
+            </tr>
 
-      <p><strong>Why Classification Matters:</strong></p>
+            <tr>
+              <td align="center" style="
+                font-size:14px;
+                font-weight:600;
+                color:#374151;
+                padding-top:6px;
+                padding-bottom:16px;
+              ">
+                Initial Examination Notice
+              </td>
+            </tr>
 
-      <p>A properly filed multi-class application ensures that your mark receives protection across all commercial areas in which it is actively used. Accurate classification also expedites examination and reduces the risk of office actions or oppositions during the registration process.</p>
+            <!-- Divider -->
+            <tr>
+              <td style="border-top:1px solid #e5e7eb; padding-top:16px;"></td>
+            </tr>
 
-      <p>To ensure compliance and expedite review, a mandatory classification verification call has been scheduled with a USPTO-accredited trademark attorney. During this call, your attorney will:</p>
-      <ul>
-        <li>Review your submitted goods and services descriptions.</li>
-        <li>Confirm applicable international classes under the Nice Agreement.</li>
-        <li>Provide guidance on any amendments required prior to approval.</li>
-      </ul>
+            <!-- Meta -->
+            <tr>
+              <td style="font-size:13px; color:#374151; padding-bottom:16px;">
+                <strong style="color:#111;">Trademark:</strong> ${values.trademarkName}<br/>
+                <strong style="color:#111;">Serial Number:</strong> ${values.serialNumber}
+              </td>
+            </tr>
 
-      <p><strong>Appointment Details:</strong></p>
-      <ul>
-        <li><strong>Examining Officer:</strong> ${values.examiningOfficer}</li>
-        <li><strong>Phone:</strong> ${values.phone}</li>
-        <li><strong>Appointment Time:</strong> ${values.appointmentTime}</li>
-        <li><strong>Appointment Number:</strong> ${values.appointmentNumber}</li>
-        <li><strong>Serial Number:</strong> ${values.serialNumber}</li>
-        <li><strong>Date:</strong> ${values.date}</li>
-      </ul>
+            <!-- Body -->
+            <tr>
+              <td style="font-size:14px; color:#111; line-height:1.6;">
+                Dear Applicant,<br/><br/>
 
-      <p>Please contact your examining officer within the specified time frame.</p>
+                Your trademark application is currently under initial examination at the <strong>United States Patent and Trademark Office (USPTO)</strong>.<br/><br/>
 
-      <p>During the call, the attorney will verify ownership details, application specifics, and may discuss any potential conflicts or objections. This step is essential to move the application forward towards publication and final registration.</p>
+                A preliminary review may require clarification or modification of the listed goods and/or services to ensure proper classification and compliance with USPTO standards. If any issues are identified, the USPTO will issue an <strong>Office Action</strong> outlining the required amendments. Failure to respond within the prescribed period may result in delay or abandonment of the application.<br/><br/>
 
-      <p><strong>Note:</strong> This call is an important step in your U.S. trademark application process. It's part of the standard review procedure with the United States Patent and Trademark Office (USPTO) – Trademark Trial and Appeal Board (TTAB). The purpose is to confirm essential details and help move your filing forward without delays. If all required information is verified, your application could progress to the publication phase seamlessly.</p>
+                As part of the examination and record-verification process, verification must be completed through a live phone call to confirm classification and application details.<br/><br/>
 
-      <p>If the scheduled call is missed, there may be one opportunity for rescheduling. Failure to complete this process may result in abandonment or rejection of the application.</p>
+                <strong>Appointment Details:</strong><br/><br/>
 
-      <p>Please <strong>"Confirm"</strong> receipt of this message and ensure that the scheduled verification is completed on time.</p>
+                <strong>Examining Officer:</strong> ${values.examiningOfficer}<br/>
+                <strong>Contact Number:</strong> ${values.contactNumber}<br/>
+                <strong>Appointment Number:</strong> ${values.appointmentNumber}<br/>
+                <strong>Appointment Hours:</strong> ${values.appointmentTime}<br/><br/>
 
-      <p><strong>Regards,<br/>United States Patent & Trademark Office</strong></p>
+                Your cooperation in this matter will assist in the continued examination of your application toward publication.<br/><br/>
+
+                <strong>Regards,<br/>The TEAS support team</strong>
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+      </tr>
+    </table>
+  </div>
   `;
 };

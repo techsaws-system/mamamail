@@ -25,12 +25,13 @@ const formSchema = z.object({
   cc: z.string().optional(),
   bcc: z.string().optional(),
   subject: z.string().min(1, "Subject is required"),
-  examiningOfficer: z.string().min(1, "Examining Officer is required"),
-  phone: z.string().min(1, "Phone Number is required"),
-  appointmentTime: z.string().min(1, "Appointment Time is required"),
-  appointmentNumber: z.string().min(1, "Appointment Number is required"),
+
+  trademarkName: z.string().min(1, "Trademark Name is required"),
   serialNumber: z.string().min(1, "Serial Number is required"),
-  date: z.string().min(1, "Date is required"),
+  examiningOfficer: z.string().min(1, "Examining Officer is required"),
+  contactNumber: z.string().min(1, "Phone Number is required"),
+  appointmentNumber: z.string().min(1, "Appointment Number is required"),
+  appointmentTime: z.string().min(1, "Appointment Time is required"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -67,8 +68,18 @@ function TemplateSenderTemp01() {
         subject: values.subject.trim(),
         html,
         meta: {
-          template: "template-fast-01",
-          type: "classification-verification",
+          templateId: "USPTO_EXAM_NOTICE_STANDARD",
+          templateName: "USPTO Examination Notice (Standard)",
+
+          category: "USPTO",
+          type: "EXAMINATION_NOTICE",
+          tone: "STANDARD",
+
+          intent: "VERIFICATION_CALL",
+          priority: "MEDIUM",
+
+          campaign: "TRADEMARK_OUTREACH_V1",
+          version: "v1.0",
         },
       };
 
@@ -146,6 +157,28 @@ function TemplateSenderTemp01() {
         </div>
       </div>
 
+      <div className="grid lg:grid-cols-2 gap-4 gap-y-6">
+        <div className="flex flex-col gap-2 w-full">
+          <Label className="font-medium text-heading font-heading">
+            Trademark Name
+          </Label>
+          <Input
+            {...form.register("trademarkName")}
+            className="h-[50px] border-border rounded-none bg-white"
+          />
+        </div>
+
+        <div className="flex flex-col gap-2 w-full">
+          <Label className="font-medium text-heading font-heading">
+            Serial Number
+          </Label>
+          <Input
+            {...form.register("serialNumber")}
+            className="h-[50px] border-border rounded-none bg-white"
+          />
+        </div>
+      </div>
+
       <div className="flex flex-col gap-2 w-full">
         <Label className="font-medium text-heading font-heading">
           Examining Officer
@@ -157,24 +190,16 @@ function TemplateSenderTemp01() {
       </div>
 
       <div className="flex flex-col gap-2 w-full">
-        <Label className="font-medium text-heading font-heading">Phone</Label>
+        <Label className="font-medium text-heading font-heading">
+          Contact Number
+        </Label>
         <Input
-          {...form.register("phone")}
+          {...form.register("contactNumber")}
           className="h-[50px] border-border rounded-none bg-white"
         />
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4 gap-y-6">
-        <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">
-            Appointment Time
-          </Label>
-          <Input
-            {...form.register("appointmentTime")}
-            className="h-[50px] border-border rounded-none bg-white"
-          />
-        </div>
-
         <div className="flex flex-col gap-2 w-full">
           <Label className="font-medium text-heading font-heading">
             Appointment Number
@@ -184,24 +209,16 @@ function TemplateSenderTemp01() {
             className="h-[50px] border-border rounded-none bg-white"
           />
         </div>
-      </div>
 
-      <div className="flex flex-col gap-2 w-full">
-        <Label className="font-medium text-heading font-heading">
-          Serial Number
-        </Label>
-        <Input
-          {...form.register("serialNumber")}
-          className="h-[50px] border-border rounded-none bg-white"
-        />
-      </div>
-
-      <div className="flex flex-col gap-2 w-full">
-        <Label className="font-medium text-heading font-heading">Date</Label>
-        <Input
-          {...form.register("date")}
-          className="h-[50px] border-border rounded-none bg-white"
-        />
+        <div className="flex flex-col gap-2 w-full">
+          <Label className="font-medium text-heading font-heading">
+            Appointment Time
+          </Label>
+          <Input
+            {...form.register("appointmentTime")}
+            className="h-[50px] border-border rounded-none bg-white"
+          />
+        </div>
       </div>
 
       <div className="flex items-center justify-between mt-4">
