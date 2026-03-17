@@ -60,6 +60,13 @@ const employees = [
         email: "matthewschwab@mamamail.cloud",
         password: "zevitech@123",
     },
+    {
+        firstName: "Maria",
+        lastName: "Khan",
+        pseudoName: "Linda Susan",
+        email: "lindasusan@mamamail.cloud",
+        password: "zevitech@123",
+    },
 ];
 
 async function main() {
