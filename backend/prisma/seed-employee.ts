@@ -6,9 +6,9 @@ const prisma = new PrismaClient();
 const employees = [
     {
         firstName: "Alina",
-        lastName: "",
-        pseudoName: "",
-        email: "@mamamail.cloud",
+        lastName: "Aqil",
+        pseudoName: "Erica James",
+        email: "ericajames@mamamail.cloud",
         password: "zevitech@123",
     },
     {
@@ -20,9 +20,9 @@ const employees = [
     },
     {
         firstName: "Maaz",
-        lastName: "",
-        pseudoName: "",
-        email: "@mamamail.cloud",
+        lastName: "Haroon",
+        pseudoName: "John Marshall",
+        email: "johnmarshall@mamamail.cloud",
         password: "zevitech@123",
     },
     {
@@ -51,6 +51,13 @@ const employees = [
         lastName: "Farooq",
         pseudoName: "Peter Macdell",
         email: "petermacdell@mamamail.cloud",
+        password: "zevitech@123",
+    },
+    {
+        firstName: "Hibroon",
+        lastName: "Bhatti",
+        pseudoName: "",
+        email: "@mamamail.cloud",
         password: "zevitech@123",
     },
 ];
