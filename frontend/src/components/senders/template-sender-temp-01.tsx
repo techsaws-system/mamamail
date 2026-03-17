@@ -28,10 +28,8 @@ const formSchema = z.object({
 
   trademarkName: z.string().min(1, "Trademark Name is required"),
   serialNumber: z.string().min(1, "Serial Number is required"),
-  examiningOfficer: z.string().min(1, "Examining Officer is required"),
   contactNumber: z.string().min(1, "Phone Number is required"),
   appointmentNumber: z.string().min(1, "Appointment Number is required"),
-  appointmentTime: z.string().min(1, "Appointment Time is required"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -181,16 +179,6 @@ function TemplateSenderTemp01() {
 
       <div className="flex flex-col gap-2 w-full">
         <Label className="font-medium text-heading font-heading">
-          Examining Officer
-        </Label>
-        <Input
-          {...form.register("examiningOfficer")}
-          className="h-[50px] border-border rounded-none bg-white"
-        />
-      </div>
-
-      <div className="flex flex-col gap-2 w-full">
-        <Label className="font-medium text-heading font-heading">
           Contact Number
         </Label>
         <Input
@@ -199,26 +187,14 @@ function TemplateSenderTemp01() {
         />
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-4 gap-y-6">
-        <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">
-            Appointment Number
-          </Label>
-          <Input
-            {...form.register("appointmentNumber")}
-            className="h-[50px] border-border rounded-none bg-white"
-          />
-        </div>
-
-        <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">
-            Appointment Time
-          </Label>
-          <Input
-            {...form.register("appointmentTime")}
-            className="h-[50px] border-border rounded-none bg-white"
-          />
-        </div>
+      <div className="flex flex-col gap-2 w-full">
+        <Label className="font-medium text-heading font-heading">
+          Appointment Number
+        </Label>
+        <Input
+          {...form.register("appointmentNumber")}
+          className="h-[50px] border-border rounded-none bg-white"
+        />
       </div>
 
       <div className="flex items-center justify-between mt-4">

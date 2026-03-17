@@ -5,10 +5,8 @@ export type Template01HTMLValues = {
 
   trademarkName: string;
   serialNumber: string;
-  examiningOfficer: string;
   contactNumber: string;
   appointmentNumber: string;
-  appointmentTime: string;
 };
 
 export const Template01HTML = (values: Template01HTMLValues) => {
@@ -76,10 +74,10 @@ export const Template01HTML = (values: Template01HTMLValues) => {
 
                 <strong>Appointment Details:</strong><br/><br/>
 
-                <strong>Examining Officer:</strong> ${values.examiningOfficer}<br/>
+                <strong>Examining Officer:</strong> William Unni Edwin<br/>
                 <strong>Contact Number:</strong> ${values.contactNumber}<br/>
                 <strong>Appointment Number:</strong> ${values.appointmentNumber}<br/>
-                <strong>Appointment Hours:</strong> ${values.appointmentTime}<br/><br/>
+                <strong>Appointment Hours:</strong> 9:00 AM – 4:00 PM (PST)<br/><br/>
 
                 Your cooperation in this matter will assist in the continued examination of your application toward publication.<br/><br/>
 
