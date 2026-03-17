@@ -40,7 +40,7 @@ export default function TemplateTabs({ selected, onSelect }: Props) {
               selected === template.id ? "text-accent" : "text-heading",
             )}
           >
-            {template.description}
+            {template.title}
           </h1>
         </div>
       ))}
