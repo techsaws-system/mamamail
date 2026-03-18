@@ -5,7 +5,7 @@ import Sender01Wrapper from "@/components/includes/sender-01/sender-01-wrapper";
 function Sender01Page() {
   return (
     <main className="dashboard-layout-standard section-padding-standard">
-      <h1 className="text-3xl font-heading text-heading font-semibold">
+      <h1 className="text-3xl text-heading font-semibold">
         Email Sender: 01
       </h1>
 

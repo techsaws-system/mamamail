@@ -33,14 +33,14 @@ function DashboardHeader() {
         <SidebarTrigger className="-ml-1 text-foreground hover:bg-primary hover:text-primary-foreground cursor-pointer" />
 
         <div className="flex flex-col items-center text-center w-fit">
-          <p className="font-semibold text-primary text-xs font-heading">
+          <p className="font-semibold text-primary text-xs">
             {formatDate()}
           </p>
 
           {loading ? (
             <Skeleton className="h-5 w-[120px] mt-1" />
           ) : (
-            <h1 className="text-heading font-heading font-medium text-lg uppercase">
+            <h1 className="text-heading font-medium text-lg uppercase">
               {user?.pseudoName}
             </h1>
           )}
@@ -58,16 +58,16 @@ function DashboardHeader() {
           ) : (
             <>
               <div className="h-10 w-10 rounded-full border bg-white border-border flex items-center justify-center">
-                <span className="font-heading text-primary font-semibold text-sm">
+                <span className="text-primary font-semibold text-sm">
                   {initials}
                 </span>
               </div>
 
               <div className="flex flex-col leading-tight">
-                <span className="font-heading text-heading text-sm font-medium">
+                <span className="text-heading text-sm font-medium">
                   {fullName}
                 </span>
-                <span className="font-heading text-muted-foreground text-xs">
+                <span className="text-muted-foreground text-xs">
                   {user?.email}
                 </span>
               </div>

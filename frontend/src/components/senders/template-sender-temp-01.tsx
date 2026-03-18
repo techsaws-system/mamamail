@@ -100,7 +100,7 @@ function TemplateSenderTemp01() {
   return (
     <div className="w-full flex flex-col gap-6">
       <div className="flex flex-col gap-2 w-full">
-        <Label className="font-medium text-heading font-heading">
+        <Label className="font-medium text-heading">
           From Name
         </Label>
         <Input
@@ -111,7 +111,7 @@ function TemplateSenderTemp01() {
 
       <div className="grid lg:grid-cols-2 gap-4 gap-y-6">
         <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">To</Label>
+          <Label className="font-medium text-heading">To</Label>
           <Input
             {...form.register("to")}
             className="h-[50px] border-border rounded-none bg-white"
@@ -119,7 +119,7 @@ function TemplateSenderTemp01() {
         </div>
 
         <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">
+          <Label className="font-medium text-heading">
             Reply To
           </Label>
           <Input
@@ -130,7 +130,7 @@ function TemplateSenderTemp01() {
       </div>
 
       <div className="flex flex-col gap-2 w-full">
-        <Label className="font-medium text-heading font-heading">Subject</Label>
+        <Label className="font-medium text-heading">Subject</Label>
         <Input
           {...form.register("subject")}
           className="h-[50px] border-border rounded-none bg-white"
@@ -139,7 +139,7 @@ function TemplateSenderTemp01() {
 
       <div className="grid lg:grid-cols-2 gap-4 gap-y-6">
         <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">CC</Label>
+          <Label className="font-medium text-heading">CC</Label>
           <Input
             {...form.register("cc")}
             className="h-[50px] border-border rounded-none bg-white"
@@ -147,7 +147,7 @@ function TemplateSenderTemp01() {
         </div>
 
         <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">BCC</Label>
+          <Label className="font-medium text-heading">BCC</Label>
           <Input
             {...form.register("bcc")}
             className="h-[50px] border-border rounded-none bg-white"
@@ -157,7 +157,7 @@ function TemplateSenderTemp01() {
 
       <div className="grid lg:grid-cols-2 gap-4 gap-y-6">
         <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">
+          <Label className="font-medium text-heading">
             Trademark Name
           </Label>
           <Input
@@ -167,7 +167,7 @@ function TemplateSenderTemp01() {
         </div>
 
         <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">
+          <Label className="font-medium text-heading">
             Serial Number
           </Label>
           <Input
@@ -178,7 +178,7 @@ function TemplateSenderTemp01() {
       </div>
 
       <div className="flex flex-col gap-2 w-full">
-        <Label className="font-medium text-heading font-heading">
+        <Label className="font-medium text-heading">
           Contact Number
         </Label>
         <Input
@@ -188,7 +188,7 @@ function TemplateSenderTemp01() {
       </div>
 
       <div className="flex flex-col gap-2 w-full">
-        <Label className="font-medium text-heading font-heading">
+        <Label className="font-medium text-heading">
           Appointment Number
         </Label>
         <Input

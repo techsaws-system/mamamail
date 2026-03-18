@@ -71,10 +71,10 @@ function LoginPage() {
           style={{ boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }}
         >
           <CardHeader className="text-center justify-center">
-            <CardTitle className="text-3xl font-light font-heading text-heading">
+            <CardTitle className="text-3xl font-bold uppercase text-heading">
               Welcome Back
             </CardTitle>
-            <CardDescription className="text-sm font-normal text-foreground">
+            <CardDescription className="text-heading capitalize font-medium">
               Enter your credentials to access Mamamail
             </CardDescription>
           </CardHeader>
@@ -82,7 +82,10 @@ function LoginPage() {
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="username" className="text-muted-foreground">
+                <Label
+                  htmlFor="username"
+                  className="text-heading font-semibold uppercase"
+                >
                   Username
                 </Label>
                 <Input
@@ -93,12 +96,15 @@ function LoginPage() {
                   autoComplete="username"
                   autoFocus
                   disabled={loading}
-                  className="h-[50px] border-border bg-input"
+                  className="h-[50px] rounded-none border-border bg-input"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-muted-foreground">
+                <Label
+                  htmlFor="password"
+                  className="text-heading font-semibold uppercase"
+                >
                   Password
                 </Label>
                 <Input
@@ -109,7 +115,7 @@ function LoginPage() {
                   onChange={(e) => setPass(e.target.value)}
                   autoComplete="current-password"
                   disabled={loading}
-                  className="h-[50px] border-border bg-input"
+                  className="h-[50px] rounded-none border-border bg-input"
                 />
               </div>
 

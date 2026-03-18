@@ -35,7 +35,7 @@ function EmailSentCard() {
   return (
     <Card className="border-border border-2">
       <CardHeader className="py-4 border-b border-border">
-        <CardTitle className="font-heading font-medium text-heading text-[16px]">
+        <CardTitle className="font-medium text-heading text-[16px]">
           Email Sent Today
         </CardTitle>
       </CardHeader>

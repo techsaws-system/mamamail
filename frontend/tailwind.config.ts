@@ -75,11 +75,6 @@ export default {
 				sm: "calc(var(--radius) - 4px)",
 			},
 
-			fontFamily: {
-				heading: ["var(--font-libre-franklin)", "sans-serif"],
-				foreground: ["var(--font-poppins)", "sans-serif"],
-			},
-
 			screens: {
 				xs: "360px",
 				sm: "480px",

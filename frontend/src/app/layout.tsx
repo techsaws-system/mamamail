@@ -1,22 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Libre_Franklin } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
 import "@/styles/globals.css";
 import "@/styles/includes.css";
 import "@/styles/animations.css";
 
-const libre = Libre_Franklin({
-  variable: "--font-libre-franklin",
+const inter = Inter({
+  variable: "--font-inter",
   display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-});
-const poppins = Poppins({
-  variable: "--font-poppins",
-  display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: [ "300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
   style: ["normal", "italic"],
 });
@@ -43,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${libre.variable} ${poppins.variable}`}>
+      <body className={`${inter.variable}`}>
         {children}
         <Toaster position="top-right" reverseOrder={false} />
       </body>

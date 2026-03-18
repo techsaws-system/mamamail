@@ -29,7 +29,7 @@ function DashboardSidebar({ ...props }) {
     <Sidebar {...props} className="border-sidebar-border">
       <SidebarHeader className="px-4 py-2 border-b-2 border-sidebar-border flex items-center flex-row gap-2">
         <Image src={Logo} alt="Mamamail" className="w-[60px] h-auto" />
-        <h2 className="text-3xl font-medium font-heading text-heading">
+        <h2 className="text-3xl font-medium text-heading">
           Mamamail
         </h2>
       </SidebarHeader>
@@ -55,7 +55,7 @@ function DashboardSidebar({ ...props }) {
                         )}
                       >
                         <Icon size={18} />
-                        <span className="text-sm font-medium font-heading">
+                        <span className="text-sm font-medium">
                           {item.title}
                         </span>
                       </Link>

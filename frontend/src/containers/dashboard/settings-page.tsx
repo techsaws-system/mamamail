@@ -85,7 +85,7 @@ function SettingsPage() {
 
   return (
     <main className="dashboard-layout-standard section-padding-standard">
-      <h1 className="text-3xl font-heading text-heading font-semibold">
+      <h1 className="text-3xl text-heading font-semibold">
         Settings
       </h1>
 
@@ -94,7 +94,7 @@ function SettingsPage() {
       <div className="flex flex-col w-full gap-8">
         <div className="grid lg:grid-cols-2 gap-x-4 gap-y-8">
           <div className="flex flex-col gap-2 w-full">
-            <Label className="font-medium text-heading font-heading">
+            <Label className="font-medium text-heading">
               First Name
             </Label>
             <Input
@@ -109,7 +109,7 @@ function SettingsPage() {
           </div>
 
           <div className="flex flex-col gap-2 w-full">
-            <Label className="font-medium text-heading font-heading">
+            <Label className="font-medium text-heading">
               Last Name
             </Label>
             <Input
@@ -125,7 +125,7 @@ function SettingsPage() {
         </div>
 
         <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">
+          <Label className="font-medium text-heading">
             Pseudo Name
           </Label>
           <Input
@@ -140,7 +140,7 @@ function SettingsPage() {
         </div>
 
         <div className="flex flex-col gap-2 w-full">
-          <Label className="font-medium text-heading font-heading">
+          <Label className="font-medium text-heading">
             Email (readonly)
           </Label>
           <Input
