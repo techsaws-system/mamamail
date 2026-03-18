@@ -15,7 +15,6 @@ export const Template03HTML = (values: Template03HTMLValues) => {
   margin:0;
   font-size:20px;
   font-weight:700;
-  color:#0f172a;
   letter-spacing:0.3px;
 ">
   <a
@@ -23,8 +22,9 @@ export const Template03HTML = (values: Template03HTMLValues) => {
     target="_blank"
     rel="noopener noreferrer"
     style="
-      color:#0f172a;
-      text-decoration:none;
+      color:#2563eb;
+      text-decoration:underline;
+      font-weight:700;
     "
   >
     United States Patent and Trademark Office (USPTO)
