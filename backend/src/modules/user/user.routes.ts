@@ -6,7 +6,7 @@ import {
     listUsers,
 } from "./user.controller";
 
-const router = Router();
+const router = Router(); 
 
 router.get("/me", protect, me);
 router.put("/me", protect, updateProfile);
