@@ -12,21 +12,34 @@ export type Template01HTMLValues = {
 export const Template01HTML = (values: Template01HTMLValues) => {
   return `
 <h1 align="center" style="
-                font-size:20px;
-                font-weight:700;
-                color:#0f172a;
-                letter-spacing:0.3px;
-              ">United States Patent and Trademark Office (USPTO)</h1>
-<h4 align="center" style="
-                font-size:14px;
-                font-weight:600;
-                color:#374151;
-                padding-top:6px;
-                padding-bottom:16px;
-              ">Initial Examination Notice</h4>
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+  color:#0f172a;
+  letter-spacing:0.3px;
+">
+  United States Patent and Trademark Office (USPTO)
+</h1>
 
+<p align="center" style="
+  margin:6px 0 14px 0;
+  font-size:14px;
+  font-weight:600;
+  color:#374151;
+">
+  Initial Examination Notice
+</p>
 
-<p><strong>Trademark:</strong> ${values.trademarkName}</p></br><p><strong>Serial Number:</strong> ${values.serialNumber}</p>
+<p align="center" style="
+  margin:0;
+  font-size:13px;
+  color:#111;
+  line-height:1.6;
+">
+  <strong>Trademark:</strong> ${values.trademarkName}
+  <br/>
+  <strong>Serial Number:</strong> ${values.serialNumber}
+</p>
 
   
      <p>Dear Applicant,</p>
@@ -47,6 +60,6 @@ export const Template01HTML = (values: Template01HTMLValues) => {
 
       <p>Your cooperation in this matter will assist in the continued examination of your application toward publication.</p>
 
-      <p><strong>Regards,<br/>United States Patent & Trademark Office</strong></p>
+      <p><strong>Regards,<br/>The TEAS support team</strong></p>
   `;
 };
