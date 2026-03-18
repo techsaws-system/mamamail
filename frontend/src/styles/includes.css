@@ -17,12 +17,6 @@
   filter: blur(10px);
 }
 
-@keyframes loading {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .tiptap {
   min-height: 180px;
   outline: none;

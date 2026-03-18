@@ -1,7 +1,7 @@
 function Loader() {
   return (
     <div className="loader">
-      <div className="loader-inner"></div>
+      <div className="loader-inner" />
     </div>
   );
 }
