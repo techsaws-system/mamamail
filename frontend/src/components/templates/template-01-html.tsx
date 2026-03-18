@@ -11,85 +11,42 @@ export type Template01HTMLValues = {
 
 export const Template01HTML = (values: Template01HTMLValues) => {
   return `
-  <div style="margin:0; padding:0; background:#f9fafb;">
-    <table width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td align="center">
-
-          <!-- Container -->
-          <table width="600" cellpadding="0" cellspacing="0" border="0" style="
-            background:#ffffff;
-            font-family: Arial, Helvetica, sans-serif;
-            color:#111;
-            padding:24px;
-          ">
-
-            <!-- Header -->
-            <tr>
-              <td align="center" style="
+<h1 align="center" style="
                 font-size:20px;
                 font-weight:700;
                 color:#0f172a;
                 letter-spacing:0.3px;
-              ">
-                United States Patent and Trademark Office (USPTO)
-              </td>
-            </tr>
-
-            <tr>
-              <td align="center" style="
+              ">United States Patent and Trademark Office (USPTO)</h1>
+<h4 align="center" style="
                 font-size:14px;
                 font-weight:600;
                 color:#374151;
                 padding-top:6px;
                 padding-bottom:16px;
-              ">
-                Initial Examination Notice
-              </td>
-            </tr>
+              ">Initial Examination Notice</h4>
 
-            <!-- Divider -->
-            <tr>
-              <td style="border-top:1px solid #e5e7eb; padding-top:16px;"></td>
-            </tr>
 
-            <!-- Meta -->
-            <tr>
-              <td style="font-size:13px; color:#374151; padding-bottom:16px;">
-                <strong style="color:#111;">Trademark:</strong> ${values.trademarkName}<br/>
-                <strong style="color:#111;">Serial Number:</strong> ${values.serialNumber}
-              </td>
-            </tr>
+<p><strong>Trademark:</strong> ${values.trademarkName} <strong>Serial Number:</strong> ${values.serialNumber}</p>
 
-            <!-- Body -->
-            <tr>
-              <td style="font-size:14px; color:#111; line-height:1.6;">
-                Dear Applicant,<br/><br/>
+  
+     <p>Dear Applicant,</p>
 
-                Your trademark application is currently under initial examination at the <strong>United States Patent and Trademark Office (USPTO)</strong>.<br/><br/>
+      <p>Your trademark application is currently under initial examination at the <strong>United States Patent and Trademark Office (USPTO)</strong>.</p>
 
-                A preliminary review may require clarification or modification of the listed goods and/or services to ensure proper classification and compliance with USPTO standards. If any issues are identified, the USPTO will issue an <strong>Office Action</strong> outlining the required amendments. Failure to respond within the prescribed period may result in delay or abandonment of the application.<br/><br/>
+      <p>A preliminary review may require clarification or modification of the listed goods and/or services to ensure proper classification and compliance with USPTO standards. If any issues are identified, the USPTO will issue an <strong>Office Action</strong> outlining the required amendments. Failure to respond within the prescribed period may result in delay or abandonment of the application.</p>
 
-                As part of the examination and record-verification process, verification must be completed through a live phone call to confirm classification and application details.<br/><br/>
+      <p>As part of the examination and record-verification process, verification must be completed through a live phone call to confirm classification and application details.</p>
 
-                <strong>Appointment Details:</strong><br/><br/>
+      <p><strong>Appointment Details:</strong></p>
+      <ul>
+        <li><strong>Examining Attorney / Reviewing Officer:</strong> William Unni Edwin</li>
+        <li><strong>Contact Number:</strong> ${values.contactNumber}</li>
+        <li><strong>Appointment Number:</strong> ${values.appointmentNumber}</li>
+        <li><strong>Appointment Hours:</strong> 9:00 AM – 4:00 PM (PST)</li>
+      </ul>
 
-                <strong>Examining Officer:</strong> William Unni Edwin<br/>
-                <strong>Contact Number:</strong> ${values.contactNumber}<br/>
-                <strong>Appointment Number:</strong> ${values.appointmentNumber}<br/>
-                <strong>Appointment Hours:</strong> 9:00 AM – 4:00 PM (PST)<br/><br/>
+      <p>Your cooperation in this matter will assist in the continued examination of your application toward publication.</p>
 
-                Your cooperation in this matter will assist in the continued examination of your application toward publication.<br/><br/>
-
-                <strong>Regards,<br/>The TEAS support team</strong>
-              </td>
-            </tr>
-
-          </table>
-
-        </td>
-      </tr>
-    </table>
-  </div>
+      <p><strong>Regards,<br/>United States Patent & Trademark Office</strong></p>
   `;
 };
