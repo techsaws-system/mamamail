@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/frontend/public/favicons/favicon.ico",
     shortcut: "/frontend/public/favicons/favicon.ico",
-    apple: "/frontend/public/favicons/apple-icon.png",
+    apple: "/frontend/public/favicons/apple-icon.png", 
   },
 };
 export const viewport: Viewport = {
