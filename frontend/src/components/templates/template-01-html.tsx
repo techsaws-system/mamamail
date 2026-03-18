@@ -41,7 +41,7 @@ export const Template01HTML = (values: Template01HTMLValues) => {
   <strong>Serial Number:</strong> ${values.serialNumber}
 </p>
 
-  
+    <br/>
      <p>Dear Applicant,</p>
 
       <p>Your trademark application is currently under initial examination at the <strong>United States Patent and Trademark Office (USPTO)</strong>.</p>
