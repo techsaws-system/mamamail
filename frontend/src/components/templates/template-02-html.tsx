@@ -50,7 +50,7 @@ export const Template02HTML = (values: Template02HTMLValues) => {
 
       <p><strong>As part of the examination and record-verification process, verification must be completed through a live phone call to confirm classification and application details.</strong></p>
 
-      <p>Failure to address classification-related matters during examination may result in the issuance of an <strong>Office Action</ strong> or delay in the prosecution of the application. To ensure accuracy of record and to avoid any procedural delays, you are respectfully requested to be available for a brief verification call regarding the examination details of your application.</p>
+      <p>Failure to address classification-related matters during examination may result in the issuance of an <strong>Office Action</strong> or delay in the prosecution of the application. To ensure accuracy of record and to avoid any procedural delays, you are respectfully requested to be available for a brief verification call regarding the examination details of your application.</p>
 
       <p><strong>Appointment Details:</strong></p>
       <ul>
