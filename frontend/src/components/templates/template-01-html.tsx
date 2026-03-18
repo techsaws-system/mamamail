@@ -26,7 +26,7 @@ export const Template01HTML = (values: Template01HTMLValues) => {
               ">Initial Examination Notice</h4>
 
 
-<p><strong>Trademark:</strong> ${values.trademarkName} <strong>Serial Number:</strong> ${values.serialNumber}</p>
+<p><strong>Trademark:</strong> ${values.trademarkName}</p></br><p><strong>Serial Number:</strong> ${values.serialNumber}</p>
 
   
      <p>Dear Applicant,</p>
