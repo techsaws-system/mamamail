@@ -33,14 +33,14 @@ function DashboardHeader() {
         <SidebarTrigger className="-ml-1 text-foreground hover:bg-primary hover:text-primary-foreground cursor-pointer" />
 
         <div className="flex flex-col items-center text-center w-fit">
-          <p className="font-semibold text-primary text-xs">
+          <p className="font-normal text-primary text-xs">
             {formatDate()}
           </p>
 
           {loading ? (
             <Skeleton className="h-5 w-[120px] mt-1" />
           ) : (
-            <h1 className="text-heading font-medium text-lg uppercase">
+            <h1 className="text-heading font-semibold text-lg uppercase">
               {user?.pseudoName}
             </h1>
           )}

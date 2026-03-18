@@ -36,8 +36,8 @@ const SMTPDeliveryHealthCard = () => {
   return (
     <Card className="border-border border-2">
       <CardHeader className="py-4 border-b border-border">
-        <CardTitle className="font-medium text-heading text-[16px]">
-          Transport Health — SMTP Delivery Status
+        <CardTitle className="font-semibold text-heading text-[16px]">
+          SMTP Delivery Status
         </CardTitle>
       </CardHeader>
 

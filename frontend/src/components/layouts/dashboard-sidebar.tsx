@@ -48,14 +48,14 @@ function DashboardSidebar({ ...props }) {
                       <Link
                         href={item.path}
                         className={cn(
-                          "flex items-center gap-3 px-4 py-6 rounded-sm transition-colors",
+                          "flex items-center gap-3 px-4 py-6 rounded-sm transition-colors !font-medium",
                           isActive
                             ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                            : "hover:bg-primary hover:text-primary-foreground",
+                            : "hover:bg-primary text-heading hover:text-primary-foreground",
                         )}
                       >
                         <Icon size={18} />
-                        <span className="text-sm font-medium">
+                        <span className="text-base">
                           {item.title}
                         </span>
                       </Link>

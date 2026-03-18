@@ -18,7 +18,7 @@ function TemplateSenderPage() {
   return (
     <main className="dashboard-layout-standard section-padding-standard">
       <h1 className="text-3xl text-heading font-semibold">
-        Email Sender: Template
+        Template Sender
       </h1>
 
       <div className="w-full mt-4 mb-8 h-[2px] rounded-full bg-border" />

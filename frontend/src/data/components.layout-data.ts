@@ -7,12 +7,12 @@ export const DashboardSidebarNavLinks = [
         path: "/dashboard/overview",
     },
     {
-        title: "Email Sender: 01",
+        title: "Email Sender",
         icon: Mails,
         path: "/dashboard/sender-01",
     },
     {
-        title: "Email Sender: Template",
+        title: "Template Sender",
         icon: Paperclip,
         path: "/dashboard/template-sender",
     },
