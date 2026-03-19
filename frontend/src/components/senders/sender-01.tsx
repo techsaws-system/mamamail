@@ -10,7 +10,7 @@ import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import Link from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
-import TextAlign from "@tiptap/extension-text-align";
+import { TextStyle } from "@tiptap/extension-text-style";
 
 import { CharCounter } from "../includes/sender-01/char-counter";
 import { SendAnimation } from "../partials/send-animation";
@@ -106,9 +106,7 @@ function EmailEditor({
       Underline,
       Link.configure({ openOnClick: false }),
       Placeholder.configure({ placeholder: "Write your email…" }),
-      TextAlign.configure({
-        types: ["heading", "paragraph", "listItem"],
-      }),
+      TextStyle,
     ],
     content: value,
     immediatelyRender: false,
@@ -165,7 +163,15 @@ function EmailEditor({
           label="Align Left"
           active={editor.isActive({ textAlign: "left" })}
           disabled={!!disabled}
-          onClick={() => editor.chain().focus().setTextAlign("left").run()}
+          onClick={() =>
+            editor
+              .chain()
+              .focus()
+              .setMark("textStyle", {
+                style: "display:block; text-align:left;",
+              })
+              .run()
+          }
         >
           <AlignLeft className="h-4 w-4" />
         </ToolbarButton>
@@ -174,7 +180,15 @@ function EmailEditor({
           label="Align Center"
           active={editor.isActive({ textAlign: "center" })}
           disabled={!!disabled}
-          onClick={() => editor.chain().focus().setTextAlign("center").run()}
+          onClick={() =>
+            editor
+              .chain()
+              .focus()
+              .setMark("textStyle", {
+                style: "display:block; text-align:center;",
+              })
+              .run()
+          }
         >
           <AlignCenter className="h-4 w-4" />
         </ToolbarButton>
@@ -183,7 +197,15 @@ function EmailEditor({
           label="Align Right"
           active={editor.isActive({ textAlign: "right" })}
           disabled={!!disabled}
-          onClick={() => editor.chain().focus().setTextAlign("right").run()}
+          onClick={() =>
+            editor
+              .chain()
+              .focus()
+              .setMark("textStyle", {
+                style: "display:block; text-align:right;",
+              })
+              .run()
+          }
         >
           <AlignRight className="h-4 w-4" />
         </ToolbarButton>
