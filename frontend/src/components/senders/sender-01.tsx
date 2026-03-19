@@ -10,6 +10,7 @@ import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import Link from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
+import TextAlign from "@tiptap/extension-text-align";
 
 import { CharCounter } from "../includes/sender-01/char-counter";
 import { SendAnimation } from "../partials/send-animation";
@@ -32,6 +33,9 @@ import {
   Redo2,
   Paperclip,
   X,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
 } from "lucide-react";
 
 /* ============================= */
@@ -51,7 +55,6 @@ type FormValues = z.infer<typeof formSchema>;
 /* ============================= */
 /* TOOLBAR BUTTON */
 /* ============================= */
-
 function ToolbarButton({
   active,
   disabled,
@@ -103,6 +106,9 @@ function EmailEditor({
       Underline,
       Link.configure({ openOnClick: false }),
       Placeholder.configure({ placeholder: "Write your email…" }),
+      TextAlign.configure({
+        types: ["heading", "paragraph", "listItem"],
+      }),
     ],
     content: value,
     immediatelyRender: false,
@@ -153,6 +159,33 @@ function EmailEditor({
           onClick={() => editor.chain().focus().toggleUnderline().run()}
         >
           <UnderlineIcon className="h-4 w-4" />
+        </ToolbarButton>
+
+        <ToolbarButton
+          label="Align Left"
+          active={editor.isActive({ textAlign: "left" })}
+          disabled={!!disabled}
+          onClick={() => editor.chain().focus().setTextAlign("left").run()}
+        >
+          <AlignLeft className="h-4 w-4" />
+        </ToolbarButton>
+
+        <ToolbarButton
+          label="Align Center"
+          active={editor.isActive({ textAlign: "center" })}
+          disabled={!!disabled}
+          onClick={() => editor.chain().focus().setTextAlign("center").run()}
+        >
+          <AlignCenter className="h-4 w-4" />
+        </ToolbarButton>
+
+        <ToolbarButton
+          label="Align Right"
+          active={editor.isActive({ textAlign: "right" })}
+          disabled={!!disabled}
+          onClick={() => editor.chain().focus().setTextAlign("right").run()}
+        >
+          <AlignRight className="h-4 w-4" />
         </ToolbarButton>
 
         <ToolbarButton
