@@ -248,6 +248,7 @@ function Sender01() {
 
   const [html, setHtml] = useState("");
   const [attachments, setAttachments] = useState<File[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [editorResetKey, setEditorResetKey] = useState(0);
 
   const form = useForm<FormValues>({
@@ -317,9 +318,9 @@ function Sender01() {
         bcc: "",
         subject: "",
       });
-      setHtml("");
+      // setHtml("");
       setAttachments([]);
-      setEditorResetKey((k) => k + 1);
+      // setEditorResetKey((k) => k + 1);
     } catch (err) {
       console.error(err);
       toast.error("Send failed");
