@@ -7,10 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-hot-toast";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import Underline from "@tiptap/extension-underline";
-import Link from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
 import { TextStyle } from "@tiptap/extension-text-style";
+import { Mark, mergeAttributes } from "@tiptap/core";
 
 import { CharCounter } from "../includes/sender-01/char-counter";
 import { SendAnimation } from "../partials/send-animation";
@@ -89,6 +88,33 @@ function ToolbarButton({
 /* ============================= */
 /* EMAIL EDITOR */
 /* ============================= */
+const InlineTextAlign = Mark.create({
+  name: "inlineTextAlign",
+
+  addAttributes() {
+    return {
+      textAlign: {
+        default: null,
+        parseHTML: (element) => element.style.textAlign || null,
+        renderHTML: (attributes) => {
+          if (!attributes.textAlign) return {};
+          return {
+            style: `text-align: ${attributes.textAlign}; display:inline-block; width:100%;`,
+          };
+        },
+      },
+    };
+  },
+
+  parseHTML() {
+    return [{ style: "text-align" }];
+  },
+
+  renderHTML({ HTMLAttributes }) {
+    return ["span", mergeAttributes(HTMLAttributes), 0];
+  },
+});
+
 function EmailEditor({
   value,
   onChange,
@@ -103,10 +129,9 @@ function EmailEditor({
   const editor = useEditor({
     extensions: [
       StarterKit,
-      Underline,
-      Link.configure({ openOnClick: false }),
       Placeholder.configure({ placeholder: "Write your email…" }),
       TextStyle,
+      InlineTextAlign,
     ],
     content: value,
     immediatelyRender: false,
@@ -167,9 +192,7 @@ function EmailEditor({
             editor
               .chain()
               .focus()
-              .setMark("textStyle", {
-                style: "display:block; text-align:left;",
-              })
+              .setMark("inlineTextAlign", { textAlign: "left" })
               .run()
           }
         >
@@ -184,9 +207,7 @@ function EmailEditor({
             editor
               .chain()
               .focus()
-              .setMark("textStyle", {
-                style: "display:block; text-align:center;",
-              })
+              .setMark("inlineTextAlign", { textAlign: "center" })
               .run()
           }
         >
@@ -201,9 +222,7 @@ function EmailEditor({
             editor
               .chain()
               .focus()
-              .setMark("textStyle", {
-                style: "display:block; text-align:right;",
-              })
+              .setMark("inlineTextAlign", { textAlign: "right" })
               .run()
           }
         >
