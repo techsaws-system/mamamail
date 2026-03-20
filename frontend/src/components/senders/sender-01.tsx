@@ -9,7 +9,7 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 import { TextStyle } from "@tiptap/extension-text-style";
-import { Mark, mergeAttributes } from "@tiptap/core";
+import TextAlign from "@tiptap/extension-text-align";
 
 import { CharCounter } from "../includes/sender-01/char-counter";
 import { SendAnimation } from "../partials/send-animation";
@@ -88,33 +88,6 @@ function ToolbarButton({
 /* ============================= */
 /* EMAIL EDITOR */
 /* ============================= */
-const InlineTextAlign = Mark.create({
-  name: "inlineTextAlign",
-
-  addAttributes() {
-    return {
-      textAlign: {
-        default: null,
-        parseHTML: (element) => element.style.textAlign || null,
-        renderHTML: (attributes) => {
-          if (!attributes.textAlign) return {};
-          return {
-            style: `text-align: ${attributes.textAlign}; display:inline-block; width:100%;`,
-          };
-        },
-      },
-    };
-  },
-
-  parseHTML() {
-    return [{ style: "text-align" }];
-  },
-
-  renderHTML({ HTMLAttributes }) {
-    return ["span", mergeAttributes(HTMLAttributes), 0];
-  },
-});
-
 function EmailEditor({
   value,
   onChange,
@@ -131,7 +104,9 @@ function EmailEditor({
       StarterKit,
       Placeholder.configure({ placeholder: "Write your email…" }),
       TextStyle,
-      InlineTextAlign,
+      TextAlign.configure({
+        types: ["paragraph"],
+      }),
     ],
     content: value,
     immediatelyRender: false,
@@ -189,11 +164,7 @@ function EmailEditor({
           active={editor.isActive({ textAlign: "left" })}
           disabled={!!disabled}
           onClick={() =>
-            editor
-              .chain()
-              .focus()
-              .setMark("inlineTextAlign", { textAlign: "left" })
-              .run()
+            editor.chain().focus().splitBlock().setTextAlign("left").run()
           }
         >
           <AlignLeft className="h-4 w-4" />
@@ -204,11 +175,7 @@ function EmailEditor({
           active={editor.isActive({ textAlign: "center" })}
           disabled={!!disabled}
           onClick={() =>
-            editor
-              .chain()
-              .focus()
-              .setMark("inlineTextAlign", { textAlign: "center" })
-              .run()
+            editor.chain().focus().splitBlock().setTextAlign("center").run()
           }
         >
           <AlignCenter className="h-4 w-4" />
@@ -219,11 +186,7 @@ function EmailEditor({
           active={editor.isActive({ textAlign: "right" })}
           disabled={!!disabled}
           onClick={() =>
-            editor
-              .chain()
-              .focus()
-              .setMark("inlineTextAlign", { textAlign: "right" })
-              .run()
+            editor.chain().focus().splitBlock().setTextAlign("right").run()
           }
         >
           <AlignRight className="h-4 w-4" />
@@ -351,16 +314,16 @@ function Sender01() {
       toast.success("Email processed");
       setStatus("success");
 
-      form.reset({
-        fromName: "",
-        to: "",
-        replyTo: "",
-        cc: "",
-        bcc: "",
-        subject: "",
-      });
+      // form.reset({
+      //   fromName: "",
+      //   to: "",
+      //   replyTo: "",
+      //   cc: "",
+      //   bcc: "",
+      //   subject: "",
+      // });
       // setHtml("");
-      setAttachments([]);
+      // setAttachments([]);
       // setEditorResetKey((k) => k + 1);
     } catch (err) {
       console.error(err);
